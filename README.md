@@ -9,8 +9,11 @@ In my tests I did not notice any problems, if you notice, let me know, or correc
 When converting PSX games using PSX2PSP, it generates folder structures like:
 
 SLUS01272/EBOOT.PBP
+
 SCUS94508/EBOOT.PBP
+
 SLES03134/EBOOT.PBP
+
 SLPS01986/EBOOT.PBP
 
 The name of the eboot folder is based on the game code and this code varies by region.
