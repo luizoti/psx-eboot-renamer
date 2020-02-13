@@ -1,5 +1,7 @@
 #!/bin/bash
 # 
+# 
+# 
 echo "Psx eboot renamer V1"
 echo "by luizoti"
 
