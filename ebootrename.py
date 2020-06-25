@@ -7,7 +7,6 @@ parser = argparse.ArgumentParser()
 parser.add_argument("PATH", help="the path of eboot files", type=str)
 args = parser.parse_args()
 
-
 class EbootRename(object):
     """docstring for EbootRename"""
     def __init__(self):
@@ -35,10 +34,11 @@ class EbootRename(object):
                     for x in range(0,5000):
                         ac2 = str("".join([chr(i) if 32 <= i <= 127 else "." for i in b])) # ascii string; chained comparison
 
-                        if not '................' in ac2:
+                        if not ac2.count('.') > 6:
                             if re.search("\_S\w{2}S\_\d{5}", ac2):
                                 self.ebootid = re.findall("\_S\w{2}S\_\d{5}", ac2)
                                 self.showname()
+                                pass
 
                         n += 1
                         b = f.read(16)
