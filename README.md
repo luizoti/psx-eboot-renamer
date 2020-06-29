@@ -10,7 +10,9 @@ Database: https://psxdatacenter.com/sitenews.html
 
 # How to use:
 
-´usage: ebootrename.py [-h] [-n] [-id] PATH
+´´´
+
+usage: ebootrename.py [-h] [-n] [-id] PATH
 
 positional arguments:
   PATH          the path of eboot files
@@ -18,4 +20,6 @@ positional arguments:
 optional arguments:
   -h, --help    show this help message and exit
   -n, --name    only name
-  -id, --idend  id at the end´
+  -id, --idend  id at the end
+  
+  ´´´
