@@ -10,8 +10,6 @@ Database: https://psxdatacenter.com/sitenews.html
 
 # How to use:
 
-´´´
-
 usage: ebootrename.py [-h] [-n] [-id] PATH
 
 positional arguments:
@@ -22,4 +20,3 @@ optional arguments:
   -n, --name    only name
   -id, --idend  id at the end
   
-  ´´´
