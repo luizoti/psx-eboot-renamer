@@ -1,40 +1,21 @@
-# PSX-Eboot-Renamer
+# psx-eboot-renamer
 
-Simple script to rename PSX eboots.
+A python script for mass renaming psx eboots.
 
-The purpose of this script is to automate the process of renaming large amounts of eboots.
+The script captures the ID of any correctly converted eboot, and then renames it.
 
-In my tests I did not notice any problems, if you notice, let me know, or correct yourself.
+Tested with eboots converted via PSX2PSP.
 
-When converting PSX games using PSX2PSP, it generates folder structures like:
+Database: https://psxdatacenter.com/sitenews.html
 
-SLUS01272/EBOOT.PBP
+# How to use:
 
-SCUS94508/EBOOT.PBP
+´usage: ebootrename.py [-h] [-n] [-id] PATH
 
-SLES03134/EBOOT.PBP
+positional arguments:
+  PATH          the path of eboot files
 
-SLPS01986/EBOOT.PBP
-
-The name of the eboot folder is based on the game code and this code varies by region.
-SLPS01986/EBOOT.PBP
-
-The script only rename .pbp files inside folders with the game code, basically it only renames it when it encounters this /SLPSXXXXX/EBOOT.PBP structure.
-
-If the eboot has 2 or more disks, this will be described according to the code described in the folder, for example if a Parasite Eve eboot is identified, and the eboot was created with SLUS from CD2, the name will look like this:
-
-SCPS-45204 PARASITE EVE - [ 2 DISC ]
-
-All multi-disc games have a dedicated SLUS for each CD and each of them is described separately by [ 1 DISC ], [ 2 DISC ], [ 3 DISC ], [ 4 DISC ] end etc.
-
-Run the script in the following two ways, it deletes the folder of each game automatically after you rename the .pbp file.
-
-./ebootrename.sh /folder/with/eboots
-
-OR
-
-~/folder_with_eboots$ /path/to/script/ebootrename.sh .
-
-The list with game names and game codes has been taken from psxdatacenter.
-
-https://psxdatacenter.com/sitenews.html
+optional arguments:
+  -h, --help    show this help message and exit
+  -n, --name    only name
+  -id, --idend  id at the end´
