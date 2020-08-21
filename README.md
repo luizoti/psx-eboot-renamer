@@ -16,6 +16,7 @@ positional arguments:
   PATH          the path of eboot files
 
 optional arguments:
-  -h, --help    show this help message and exit
-  -n, --name    only name
-  -id, --idend  id at the end´
+
+  -h, --help   - show this help message and exit
+  -n, --name   - only name
+  -id, --idend - id at the end´
