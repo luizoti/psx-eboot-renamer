@@ -26,10 +26,9 @@ parser.add_argument("-n", "--name", help="only name", action="store_true")
 parser.add_argument("-id", "--idend", help="id at the end", action="store_true")
 args = parser.parse_args()
 
-regex = "(?:\_)((?:S|L|H|E|C).+?(?:S|M|A|D|J|P|M)\_\d{5})"
+regex = r"(?:\_)((?:S|L|H|E|C).+?(?:S|M|A|D|J|P|M)\_\d{5})"
 
 class EbootRename(object):
-    """docstring for EbootRename"""
     def __init__(self):
         self.ebootid = ''
         self.ebpaths = []
@@ -70,18 +69,18 @@ class EbootRename(object):
         gamename = self.name
 
         if not args.name or args.idend:
-            dest_name = f'[{gameid}] {gamename}'
+            dest_name = ' '.join([''.join(['[', gameid, ']']), gamename])
             pass
 
         if args.name:
-            dest_name = f'{self.name}'
+            dest_name = self.name
         if args.idend:
-            dest_name = f'{self.name} [{gameid}]'
+            dest_name = ' '.join([gamename, ''.join(['[', gameid, ']'])])
             pass
             
         if not self.ebfilepath == os.path.join(args.PATH, dest_name + '.PBP'):
-            print("OLD NAME: " + self.ebfilepath)
-            print("NEW NAME: " + os.path.join(args.PATH, dest_name + '.PBP'))
+            print(' 'join(["OLD NAME:", self.ebfilepath]))
+            print(' 'join({"NEW NAME:", os.path.join(args.PATH, dest_name + '.PBP')}))
             print("")
             os.rename(self.ebfilepath, os.path.join(args.PATH, dest_name + '.PBP'))
             pass
